@@ -6,7 +6,7 @@ A full-stack MERN application with session-based authentication, where:
 
 ✅ Sessions are stored in SQLite via connect-sqlite3
 
-✅ Frontend is built with React and consumes backend APIs
+✅ Frontend is built with React, Bootstrap for CSS and consumes backend APIs
 
 ✅ Frontend deployed on Netlify, backend deployed on Render
 
@@ -220,6 +220,88 @@ GET /me – Protected route, returns user data if session is valid
       ``` 
        {"message": "Logged out successfully" }
       ```
+### API 4
+
+#### Path: `https://klickksassignment.onrender.com/api/auth/delete`
+
+#### Method: `delete`
+
+
+- **Scenario 1**
+
+  - **Description**:
+
+    If the username does not authorized 
+
+  - **Response**
+    - **Status code**
+      ```
+      400
+      ```
+    - **Body**
+    - 
+      ```
+       {"error": "Unauthorized" }
+    
+      ```
+
+      - **Scenario 2**
+
+  - **Description**:
+
+    If the username is authorized 
+
+  - **Response**
+    - **Status code**
+      ```
+        200
+      ```
+    - **Body**
+      
+      ``` 
+       { "message": "deleted successfully" }
+      ```
+### API 5
+
+#### Path: `https://klickksassignment.onrender.com/api/auth/me`
+
+#### Method: `delete`
+
+
+- **Scenario 1**
+
+  - **Description**:
+
+    If the username does not authorized 
+
+  - **Response**
+    - **Status code**
+      ```
+      400
+      ```
+    - **Body**
+    - 
+      ```
+       {"error": "Unauthorized" }
+    
+      ```
+
+      - **Scenario 2**
+
+  - **Description**:
+
+    If the username is authorized it gives user details like name and email ID
+
+  - **Response**
+    - **Status code**
+      ```
+        200
+      ```
+    - **Body**
+      
+      ``` 
+       { name: saravanan, email: srn@gmail.com }
+      ```
 **Setup Instructions**
 
 - Navigate to the backend/ folder:
@@ -274,6 +356,31 @@ Connect repo to Netlify
 Build command: npm run build
 Publish directory: build
 
+
+### Authentication Flow
+
+- **Register**
+
+  - Users can create a new account using their name, email, and password.
+  - If the registration is successful, they are automatically logged in and redirected to the Dashboard.
+
+- **Login**
+
+  - Existing users can log in using their email and password.
+  - If credentials are correct, the session is created and the user is redirected to the Dashboard.
+  - If credentials are invalid, an error message is shown (e.g., "Invalid email or password").
+
+- **Dashboard**
+
+  - Once logged in, users can:
+  - View their profile information
+  - Logout from the session
+  - Delete their account
+
+- **Session Handling**
+
+  - User sessions are maintained using express-session and stored in a SQLite database.
+  - Protected routes like /me and /delete require an active session.
 
 ### Notes for Demo
 
