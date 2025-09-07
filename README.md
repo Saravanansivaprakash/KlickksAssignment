@@ -28,6 +28,8 @@ POST /logout – Destroy session
 
 GET /me – Protected route, returns user data if session is valid
 
+DELETE /delete - Delete existing user account returns success message if session is valid
+
 ## Tech Stack
 
 - Express.js
