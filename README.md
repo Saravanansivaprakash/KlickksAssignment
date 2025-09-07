@@ -1,4 +1,4 @@
-# MERN Stack Authentication Project
+# MERN Stack Authentication Project (KlickksAssignment)
 
 A full-stack MERN application with session-based authentication, where:
 
