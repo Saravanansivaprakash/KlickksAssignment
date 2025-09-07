@@ -12,7 +12,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "https://klickksassignment.onrender.com",
+    origin: "https://simpleauthen.netlify.app",
     credentials: true,
   })
 );
