@@ -1,6 +1,8 @@
 const express = require("express");
 const cors = require("cors");
 const session = require("express-session");
+const SQLiteStore = require("connect-sqlite3")(session);
+const path = require("path");
 const dotenv = require("dotenv");
 const authRoutes = require("./routes/auth");
 dotenv.config();
@@ -10,14 +12,19 @@ const app = express();
 
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: "https://klickksassignment.onrender.com",
     credentials: true,
   })
 );
 
 app.use(
   session({
-    secret: process.env.SECRET_KEY,
+    store: new SQLiteStore({
+      // Sessions will be stored in db/sessions.sqlite
+      dir: path.join(__dirname, "db"),
+      db: "sessions.db",
+    }),
+    secret: process.env.SECRET_KEY || "dedfo32AzlRMwEm4LaXbp1UjHat9F1",
     resave: false,
     saveUninitialized: false,
     cookie: {
