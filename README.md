@@ -268,6 +268,16 @@ Connect repo to Netlify
 Build command: npm run build
 Publish directory: build
 
+### Live Demo Links
+#### Backend API 
+[https://klickksassignment.onrender.com](https://klickksassignment.onrender.com) 
+#### Frontend UI
+[https://simpleauthen.netlify.app](https://simpleauthen.netlify.app) 
+
+
+
+
+
 ### Notes for Demo
 
 - Sessions are stored using SQLite via connect-sqlite3
